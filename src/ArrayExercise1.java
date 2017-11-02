@@ -47,7 +47,8 @@ public class ArrayExercise1 {  // begin class
         int inAmount = 5;               //amount of numbers to be inputted
         
         boolean check = false;          //variable that turns true when person inputs -1
-        int inIndex;                    //variable fo which number in array to index
+        int inIndex;                    //variable for which number in array to index
+        String YorN;                    //variable for yes or no
     	
     	//BufferedReader fin = new BufferedReader(new FileReader("name of file"));
     	PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("testOut.txt")));
@@ -112,14 +113,26 @@ public class ArrayExercise1 {  // begin class
         while (check == false){
             
             inIndex = Integer.parseInt(JOptionPane.showInputDialog
-               ("Please enter which number in the array you would like to index."
+               ("Please enter which number in the array you would like to see."
                        + "\ni.e. 1 would be first number in array"));
             check = inIndex == ENDVAL;
             inIndex = inIndex - OFFSET;
             if (check == false){
                 System.out.print("\nYour Number is: " + inNum[inIndex]);
+                
+                YorN = JOptionPane.showInputDialog("Would you like to change the number"
+                        + "\nType Yes or No");
+                
+                if (YorN.equals("Yes")){
+                    
+                    inNum[inIndex] = Integer.parseInt(JOptionPane.showInputDialog("What would ou like to change it too"));
+                    System.out.println("\nYour Number is: " + inNum[inIndex]);
+                    
+                }//end of if 
+                
             }
         }//end of while loop
+        
     
         // ******** closing message *********
         

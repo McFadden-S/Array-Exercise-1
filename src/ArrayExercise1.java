@@ -9,9 +9,10 @@
                 program will then print out the numbers in their original order, 
                 and in reverse order
  *
- * Input:  User will input 5 numbers
+ * Input:  User will chose how many numbers will be inputted and then input 
+ *         that amount of numbers
  *
- * Output: Will out put in original oder and reverse order
+ * Output: Will out put in original order and reverse order
  ***********************************************************************/
  
  // import java libraries here as needed
@@ -27,7 +28,7 @@ public class ArrayExercise1 {  // begin class
     
     // ********* declaration of constants **********
     
-        final int MAX = 50;             //constant for max range of array
+        final int MAX = 20;             //constant for max range of array
     
     // ********** declaration of variables **********
     
@@ -67,7 +68,10 @@ public class ArrayExercise1 {  // begin class
     	fout.println("*******************************************");
  	    	
     // ************************ get input **********************
-
+        
+        inAmount = Integer.parseInt(JOptionPane.showInputDialog
+            ("Please enter the amount of numbers you would like to enter\nMAX: 20")); 
+        
         for (int i = 0; i < inAmount; i++){
             
             inNum[i] = Integer.parseInt(JOptionPane.showInputDialog("Please Enter a Number")); 

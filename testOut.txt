@@ -1,0 +1,9 @@
+*******************************************
+Name:		McFadden
+Class:		CS30S
+Assignment:	Array Exercise 1
+*******************************************
+Numbers in Original Order: 1, 2, 3, 4, 5, 
+Numbers in Reverse Order: 5, 4, 3, 2, 1, 
+
+end of processing.

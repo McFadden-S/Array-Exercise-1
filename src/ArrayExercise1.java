@@ -29,6 +29,8 @@ public class ArrayExercise1 {  // begin class
     // ********* declaration of constants **********
     
         final int MAX = 20;             //constant for max range of array
+        final int OFFSET = 1;           //constant for 1 v 0 counting difference
+        final int ENDVAL = -1;          //cnstant fo value to end indexing
     
     // ********** declaration of variables **********
     
@@ -43,6 +45,9 @@ public class ArrayExercise1 {  // begin class
         
         int[] inNum = new int[MAX];     //array for inputted number
         int inAmount = 5;               //amount of numbers to be inputted
+        
+        boolean check = false;          //variable that turns true when person inputs -1
+        int inIndex;                    //variable fo which number in array to index
     	
     	//BufferedReader fin = new BufferedReader(new FileReader("name of file"));
     	PrintWriter fout = new PrintWriter(new BufferedWriter(new FileWriter("testOut.txt")));
@@ -103,6 +108,18 @@ public class ArrayExercise1 {  // begin class
             fout.print(inNum[i] + ", ");
             
         }//end of for loop
+        
+        while (check == false){
+            
+            inIndex = Integer.parseInt(JOptionPane.showInputDialog
+               ("Please enter which number in the array you would like to index."
+                       + "\ni.e. 1 would be first number in array"));
+            check = inIndex == ENDVAL;
+            inIndex = inIndex - OFFSET;
+            if (check == false){
+                System.out.print("\nYour Number is: " + inNum[inIndex]);
+            }
+        }//end of while loop
     
         // ******** closing message *********
         

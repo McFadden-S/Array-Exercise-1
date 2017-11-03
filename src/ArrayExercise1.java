@@ -78,10 +78,10 @@ public class ArrayExercise1 {  // begin class
  	    	
     // ************************ get input **********************
         
-        inAmount = Integer.parseInt(JOptionPane.showInputDialog
+        inAmount = Integer.parseInt(JOptionPane.showInputDialog //asks for amount of numbers
             ("Please enter the amount of numbers you would like to enter\nMAX: 20")); 
         
-        for (int i = 0; i < inAmount; i++){
+        for (int i = 0; i < inAmount; i++){ //assigns value based on input
             
             inNum[i] = Integer.parseInt(JOptionPane.showInputDialog("Please Enter a Number")); 
             
@@ -92,48 +92,51 @@ public class ArrayExercise1 {  // begin class
     
     // ************************ print output ****************************
         
-        System.out.print("Numbers in Original Order: ");
-        fout.print("Numbers in Original Order: ");
+        System.out.print("Numbers in Original Order: "); //output banner
+        fout.print("Numbers in Original Order: ");  //output banner
         
-        for (int i = 0; i < inAmount; i++){
+        for (int i = 0; i < inAmount; i++){ //outputs numbers in array
             
-            System.out.print(inNum[i] + ", ");
-            fout.print(inNum[i] + ", ");
-            
-        }//end of for loop
-        
-        System.out.print("\nNumbers in Reverse Order: ");
-        fout.println("");
-        fout.print("Numbers in Reverse Order: ");
-        
-        for (int i = inAmount - 1; i >= 0; i--){
-            
-            System.out.print(inNum[i] + ", ");
-            fout.print(inNum[i] + ", ");
+            System.out.print(inNum[i] + ", "); //prints to console
+            fout.print(inNum[i] + ", "); //prints to outfile
             
         }//end of for loop
         
-        while (check == false){
+        System.out.print("\nNumbers in Reverse Order: "); //output header
+        fout.println(""); //adds space
+        fout.print("Numbers in Reverse Order: "); //output header
+        
+        for (int i = inAmount - 1; i >= 0; i--){ //outputs numbers in reverse order
+            
+            System.out.print(inNum[i] + ", "); //prints to console
+            fout.print(inNum[i] + ", "); //prints to outfile
+            
+        }//end of for loop
+        
+        while (check == false){ //continues till end val
             
             inIndex = Integer.parseInt(JOptionPane.showInputDialog
                ("Please enter which number in the array you would like to see."
-                       + "\ni.e. 1 would be first number in array"));
-            check = inIndex == ENDVAL;
-            inIndex = inIndex - OFFSET;
-            if (check == false){
-                System.out.print("\nYour Number is: " + inNum[inIndex]);
+                       + "\ni.e. 1 would be first number in array"
+                       + "\nEnter -1 i you woul like to end")); //asks for input
+            check = inIndex == ENDVAL; //check to make sure end val hasnt been entered
+            inIndex = inIndex - OFFSET; //offsets counting starting at 0 not 1
+            if (check == false){ // only executed if end val wasnt ansewred
+                System.out.print("\nYour Number is: " + inNum[inIndex]); //prints number requested
                 
                 YorN = JOptionPane.showInputDialog("Would you like to change the number"
-                        + "\nType Yes or No");
+                        + "\nType Yes or No"); //asks if they would like to change it
                 
-                if (YorN.equals("Yes")){
+                if (YorN.equals("Yes")){ //executed if they want to change the number
                     
+                    //asks what they want to change it to
                     inNum[inIndex] = Integer.parseInt(JOptionPane.showInputDialog("What would ou like to change it too"));
+                    //prints new value
                     System.out.println("\nYour New Number is: " + inNum[inIndex]);
                     
                 }//end of if 
                 
-            }
+            }//end of check = false if
         }//end of while loop
         
             min = inNum[0]; //  assume first elements as smallest number
@@ -151,8 +154,8 @@ public class ArrayExercise1 {  // begin class
 			} //end of if loop
 		}//end of for loop
                 
-                System.out.println("The Max Number of the Array is: " + max);
-                System.out.println("The Minimum Number of the Array is: " + min);
+                System.out.println("The Max Number of the Array is: " + max); //prints max number in array
+                System.out.println("The Minimum Number of the Array is: " + min);  //prints min number in array
     
         // ******** closing message *********
         

@@ -90,6 +90,21 @@ public class ArrayExercise1 {  // begin class
 
     // ************************ processing ***************************
     
+     min = inNum[0]; //  assume first elements as smallest number
+	    max = inNum[0]; //  assume first elements as largest number
+
+		for (int i = 0; i < inAmount; i++)  // iterate for loop from arrays 1st index (second element)
+		{
+			if (inNum[i] > max) //checks if number is greater
+			{
+				max = inNum[i]; //if its greater assignes it
+			}//end of if loop
+			if (inNum[i] < min) //checks if number is lesser
+			{
+				min = inNum[i]; //if its lesser assignes it
+			} //end of if loop
+		}//end of for loop
+    
     // ************************ print output ****************************
         
         System.out.print("Numbers in Original Order: "); //output banner
@@ -138,21 +153,6 @@ public class ArrayExercise1 {  // begin class
                 
             }//end of check = false if
         }//end of while loop
-        
-            min = inNum[0]; //  assume first elements as smallest number
-	    max = inNum[0]; //  assume first elements as largest number
-
-		for (int i = 0; i < inAmount; i++)  // iterate for loop from arrays 1st index (second element)
-		{
-			if (inNum[i] > max) //checks if number is greater
-			{
-				max = inNum[i]; //if its greater assignes it
-			}//end of if loop
-			if (inNum[i] < min) //checks if number is lesser
-			{
-				min = inNum[i]; //if its lesser assignes it
-			} //end of if loop
-		}//end of for loop
                 
                 System.out.println("The Max Number of the Array is: " + max); //prints max number in array
                 System.out.println("The Minimum Number of the Array is: " + min);  //prints min number in array

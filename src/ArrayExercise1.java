@@ -90,20 +90,7 @@ public class ArrayExercise1 {  // begin class
 
     // ************************ processing ***************************
     
-     min = inNum[0]; //  assume first elements as smallest number
-	    max = inNum[0]; //  assume first elements as largest number
-
-		for (int i = 0; i < inAmount; i++)  // iterate for loop from arrays 1st index (second element)
-		{
-			if (inNum[i] > max) //checks if number is greater
-			{
-				max = inNum[i]; //if its greater assignes it
-			}//end of if loop
-			if (inNum[i] < min) //checks if number is lesser
-			{
-				min = inNum[i]; //if its lesser assignes it
-			} //end of if loop
-		}//end of for loop
+     
     
     // ************************ print output ****************************
         
@@ -154,9 +141,44 @@ public class ArrayExercise1 {  // begin class
             }//end of check = false if
         }//end of while loop
                 
+                min = inNum[0]; //  assume first elements as smallest number
+                max = inNum[0]; //  assume first elements as largest number
+
+		for (int i = 0; i < inAmount; i++)  // iterate for loop from arrays 1st index (second element)
+		{
+			if (inNum[i] > max) //checks if number is greater
+			{
+				max = inNum[i]; //if its greater assignes it
+			}//end of if loop
+			if (inNum[i] < min) //checks if number is lesser
+			{
+				min = inNum[i]; //if its lesser assignes it
+			} //end of if loop
+		}//end of for loop
+                
                 System.out.println("\nThe Max Number of the Array is: " + max); //prints max number in array
                 System.out.println("The Minimum Number of the Array is: " + min);  //prints min number in array
-    
+                
+                System.out.print("Final Numbers in Original Order: "); //output banner
+                fout.print("Final Numbers in Original Order: ");  //output banner
+        
+        for (int i = 0; i < inAmount; i++){ //outputs numbers in array
+            
+            System.out.print(inNum[i] + ", "); //prints to console
+            fout.print(inNum[i] + ", "); //prints to outfile
+            
+        }//end of for loop
+        
+        System.out.print("\nFinal Numbers in Reverse Order: "); //output header
+        fout.println(""); //adds space
+        fout.print("Final Numbers in Reverse Order: "); //output header
+        
+        for (int i = inAmount - 1; i >= 0; i--){ //outputs numbers in reverse order
+            
+            System.out.print(inNum[i] + ", "); //prints to console
+            fout.print(inNum[i] + ", "); //prints to outfile
+            
+        }//end of for loop
         // ******** closing message *********
         
         System.out.println("\n\nend of processing.");

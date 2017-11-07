@@ -154,7 +154,7 @@ public class ArrayExercise1 {  // begin class
             }//end of check = false if
         }//end of while loop
                 
-                System.out.println("The Max Number of the Array is: " + max); //prints max number in array
+                System.out.println("\nThe Max Number of the Array is: " + max); //prints max number in array
                 System.out.println("The Minimum Number of the Array is: " + min);  //prints min number in array
     
         // ******** closing message *********
